@@ -13,20 +13,26 @@
                 </tr>
             </thead>
             <tbody>
+            @if($turma)
+                @foreach($turma as $users)
                     <tr class="">
-                        <th scope="row">1</th>
-                        <th>Daniel Junior de Souza Lima</th>
-                        <th><a href="#" class="btn btn-primary" >Olhar</a></th>
-                        <th class="text-danger text-center">REGULAR</th>
+                        <th scope="row">{{ $numero = $numero + 1 }}</th>
+                        <th>{{$users->name}}</th>
+                        <th><a href="{{ route('perfil', $users->matricula)}}" class="btn btn-primary" >Olhar</a></th>
+                        @if($users->avaliacao == 'RUIM')
+                            <th class="text-danger text-center">{{ $users->avaliacao }}</th>
+                        @elseif($users->avaliacao == 'REGULAR')
+                            <th class="text-warning text-center">{{ $users->avaliacao }}</th>
+                        @elseif($users->avaliacao == 'BOM')
+                            <th class="text-primary text-center">{{ $users->avaliacao }}</th>
+                        @elseif($users->avaliacao == 'ÓTIMO')
+                            <th class="text-success text-center">{{ $users->avaliacao }}</th>
+                        @elseif($users->avaliacao == 'O MELHOR')
+                            <th class="text-secondary text-center">{{ $users->avaliacao }}</th>
+                        @endif
                     </tr>
-
-                <tr class="">
-                    <th scope="row">2</th>
-                    <th>Vandiscleia Lurdes Alvenaria</th>
-                    <th><a href="#" class="btn btn-primary" >Olhar</a></th>
-                    <th class="text-success text-center">EXCELENTE</th>
-                </tr>
-                <hr>
+                @endforeach
+            @endif
             </tbody>
         </table>
     </div>

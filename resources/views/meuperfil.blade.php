@@ -1,45 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-5">
-        <div class="card">
-            <div class="row">
-                <div class="col-sm-2 col-md-2 col-lg-2">
-                    <img class="img-thumbnail mt-3 mb-3 ml-3 mr-3" src="http://via.placeholder.com/150x150">
-                </div>
-                <div class="col-sm col-md col-lg text-left">
-                <h5 class="mt-5 ml-5 mr-5 negrito"> {{ Auth::user()->name }}</h5>
-                    <p class="ml-5 mr-5" type="date">E-mail: {{ Auth::user()->email }}</p>
-                    <p class="ml-5">Avaliação: Excelente </p>
-                    <hr>
-                </div>
-                <div class="col-sm-0 col-md col-lg">
-                    <p class="text-right mr-3 mt-3">Ultima Atualização 22/05/2018 as 22:55:22 <br><br>
-                    </p>
-                </div>
+<div class="container mt-5 mb-5 bg-light" id="meuperfil">
+    <h3 class="text-center py-3"><i class=" fas fa-user"> </i> MEU PERFIL</h3>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 text-center" style="height: 600px;">
+            <div class="bg-secondary rounded" style="height: 200px;">
+                <img src="http://via.placeholder.com/320x320" class="img-thumbnail foto-perfil" style="">
+                <p class="text-center text-light foto-perfil" style="width: 100%; top: 40px;">{{ Auth::user()->name }}</p>
             </div>
-            <div class="row mb-5 mr-5 ml-5">
-                <div class="col-sm-2 col-md-2 col-lg-2 text-center mt-5 negrito">
-                    <p> M<br>I<br>N<br>H<br>A<br>S<br><br>I<br>N<br>F<br>O<br>R<br>M<br>A<br>Ç<br>Õ<br>E<br>S</p>
+            <div class="row mt-3">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <div class="card rounded text-left">
+                        <div style="padding-left: 20px; padding-right: 20px;">
+                            <p class="text-center mt-1 negrito"><i class="fas fa-user-tie"></i> INFORMAÇÕES COMPLEMENTARES</p>
+                            <p class="">Minha Turma: {{ Auth::user()->turma }}</p>
+                            <p class="">Minha Idade: {{ Auth::user()->data_de_nascimento }}</p>
+                            <p class="">Meu Sexo: {{ Auth::user()->sexo }}</p>
+                            <p class="">Meu E-mail: {{ Auth::user()->email }}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm col-md col-lg">
-                    <h5 class="ml-5 negrito">Sobre me</h5>
-                    <div class="card">
-                        <p class="text-justify mr-3 ml-3 mt-3 mb-3">&nbsp&nbsp&nbsp&nbspIntrodução Com o avanço da tecnologia
-                            nas últimas décadas, principalmente dos computadores, discuti-se cada vez mais a utilização. </p>
-                    </div>
-                    <h5 class="ml-5 mt-3 negrito">Formação</h5>
-                    <div class="card">
-                        <p class="text-justify mr-3 ml-3 mt-3">&nbsp&nbsp&nbsp&nbsp Analise e Desenvolvimento de Sistema</p>
-                    </div>
-                    <h5 class="ml-5 mt-3 negrito">Mais Informações</h5>
-                    <div class="card">
-                        <p class="text-justify mr-3 ml-3 mt-3">Data de Nascimento: {{ Auth::user()->data_de_nascimento }}</p>
-                        <p class="text-justify mr-3 ml-3 mt-1">Sexo: {{ Auth::user()->sexo }}</p>
-                        <p class="text-justify mr-3 ml-3 mt-1">Minha Turma: {{ Auth::user()->turma }}</p>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <textarea class="form-control" id="" rows="4" placeholder="O que você esta pensando?"></textarea>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
 </div>
 @endsection

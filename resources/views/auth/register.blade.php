@@ -5,7 +5,7 @@
         <form class="" method="POST" action="{{ route('register') }}">
             {{ csrf_field() }}
             <div class="text-left">
-                <h2 class="text-center"><i class="fas fa-user-circle"></i> REGISTRAR</h2>
+                <h2 class="text-center"><i class="fas fa-user-circle btn-floating pulse"></i> REGISTRAR</h2>
                 <hr>
                 <div class="form-group text-left">
                     <label for="name">Seu Nome Completo: </label>
@@ -64,6 +64,9 @@
                     <button class="btn btn-primary px-3" type="submit">
                         Cadastrar
                     </button>
+                </div>
+                <div>
+                    <input class="" type="hidden" name="matricula" value="{{ $matricula = date('Ym').rand(4, 10)}}">
                 </div>
             </div>
         </form>

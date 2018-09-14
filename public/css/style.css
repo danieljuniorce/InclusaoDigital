@@ -150,7 +150,7 @@ a.article, a.article:hover {
 ----------------------------------------------------- */
 @media(max-width: 360px){
     #content{
-
+        padding: 75px;
     }
 }
 #content {
@@ -280,6 +280,12 @@ a .active:hover{
         color: white;
         font-size: 7pt;
     }
+    #meuperfil p{
+        font-size: 10pt;
+    }
+    #capa-meuperfil{
+        height: 300px;
+    }
 }
 
 /*
@@ -318,4 +324,13 @@ a .active:hover{
 
 .negrito{
     font-weight: bolder;
+}
+/*
+    MEU PERFIL
+*/
+.foto-perfil{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 40px;
 }

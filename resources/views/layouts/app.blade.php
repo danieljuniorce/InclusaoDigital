@@ -14,6 +14,10 @@
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
+    <!-- Vue.js -->
+    <script src="{{ asset('js/vue.js')}} }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
@@ -33,7 +37,7 @@
                     <a href="{{ route('home') }}" class=""><i class="fas fa-newspaper"></i> PÁGINA INICIAL</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fas fa-align-justify"> </i> SOBRE</a>
+                    <a href="#"><i class="fas fa-align-justify"> </i> SOBRE </a>
                     <a href="#"><i class="fas fa-phone-volume"> </i> CONTATO</a>
                 </li>
                 <li>
@@ -54,10 +58,10 @@
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">ACADÊMICO</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="{{ route('meuperfil') }}">MEUS DADOS CADASTRAIS</a>
+                            <a href="{{ route('meuperfil') }}">MEU PERFIL</a>
                         </li>
                         <li>
-                        <a href="{{ route('minhaturma') }}">MINHA TURMA</a>
+                        <a href="{{ route('minhaturma', Auth::user()->turma) }}">MINHA TURMA</a>
                         </li>
                         <li>
                             <a href="{{ route('frequencia') }}">CONSULTA FREQUÊNCIA</a>
@@ -141,7 +145,6 @@
     
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->

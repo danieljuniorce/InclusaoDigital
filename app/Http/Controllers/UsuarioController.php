@@ -16,11 +16,19 @@ class UsuarioController extends Controller
         return view('meuperfil');
     }
 
-    public function minhaTurma(){
-        return view('minhaturma');
+    public function minhaTurma(Request $request, $escolheTurma){
+        $turma = App\User::where('turma', $escolheTurma)->get();
+        $numero = 0;
+        return view('minhaturma', compact('turma', 'numero'));
     }
 
     public function minhaFrequencia(){
         return view('minhafrequencia');
+    }
+
+    public function perfil(Request $request, $matricula){
+        $amigos = App\User::where('matricula', $matricula)->get();
+
+        return view('perfil', compact('amigos'));
     }
 }

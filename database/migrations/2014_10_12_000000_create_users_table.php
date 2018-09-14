@@ -21,8 +21,10 @@ class CreateUsersTable extends Migration
             $table->string('img')->nullable();
             $table->date('data_de_nascimento');
             $table->string('sexo');
-            $table->string('turma')->nullable();
+            $table->string('turma')->default('0')->nullable();
             $table->string('frequencia_id')->nullable();
+            $table->string('matricula');
+            $table->enum('avaliacao',['RUIM', 'REGULAR', 'BOM', 'ÓTIMO', 'O MELHOR'])->default('BOM')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

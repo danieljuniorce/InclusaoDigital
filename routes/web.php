@@ -20,5 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('meuperfil', 'UsuarioController@index')->name('meuperfil');
-Route::get('minhaturma', 'UsuarioController@minhaTurma')->name('minhaturma');
 Route::get('minhafrequencia', 'UsuarioController@minhaFrequencia')->name('frequencia');
+Route::get('/minhaturma/{turma}', 'UsuarioController@minhaTurma')->name('minhaturma');
+Route::get('/perfil/{matricula}', 'UsuarioController@perfil')->name('perfil');
