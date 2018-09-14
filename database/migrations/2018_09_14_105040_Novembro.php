@@ -8,7 +8,7 @@ class Novembro extends Migration
 {
     public function up()
     {
-        Schema::create('outubro', function (Blueprint $table){
+        Schema::create('novembro', function (Blueprint $table){
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
@@ -54,6 +54,6 @@ class Novembro extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('outubro');
+        Schema::dropIfExists('novembro');
     }
 }

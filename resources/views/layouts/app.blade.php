@@ -86,6 +86,9 @@
                 <li>
                     <a href="#">AVISOS</a>
                 </li>
+                    <li>
+                        <a href="#">ADMINISTRAÇÃO</a>
+                    </li>
             </ul>
             @endif
 
