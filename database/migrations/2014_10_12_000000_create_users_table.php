@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('img')->nullable();
+            $table->enum('acesso',['Admin', 'User'])->default('User');
             $table->date('data_de_nascimento');
             $table->string('sexo');
             $table->string('turma')->default('0')->nullable();

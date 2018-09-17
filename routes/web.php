@@ -23,3 +23,5 @@ Route::get('meuperfil', 'UsuarioController@index')->name('meuperfil');
 Route::get('minhafrequencia', 'UsuarioController@minhaFrequencia')->name('frequencia');
 Route::get('/minhaturma/{turma}', 'UsuarioController@minhaTurma')->name('minhaturma');
 Route::get('/perfil/{matricula}', 'UsuarioController@perfil')->name('perfil');
+
+Route::get('admin/frequencia', 'AdministracaoController@index')->name('admin.frequencia');

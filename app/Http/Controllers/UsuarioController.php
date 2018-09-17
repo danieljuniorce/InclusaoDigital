@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\DB;
 use App;
+use App\User;
 class UsuarioController extends Controller
 {
     public function __construct(){
@@ -17,7 +18,7 @@ class UsuarioController extends Controller
     }
 
     public function minhaTurma(Request $request, $escolheTurma){
-        $turma = App\User::where('turma', $escolheTurma)->get();
+        $turma = User::where('turma', $escolheTurma)->get();
         $numero = 0;
         return view('minhaturma', compact('turma', 'numero'));
     }
@@ -25,10 +26,9 @@ class UsuarioController extends Controller
     public function minhaFrequencia(){
         return view('minhafrequencia');
     }
-
+    
     public function perfil(Request $request, $matricula){
         $amigos = App\User::where('matricula', $matricula)->get();
-
         return view('perfil', compact('amigos'));
     }
 }

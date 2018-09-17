@@ -86,9 +86,11 @@
                 <li>
                     <a href="#">AVISOS</a>
                 </li>
+                @if(Auth::user()->acesso == 'Admin')
                     <li>
-                        <a href="#">ADMINISTRAÇÃO</a>
+                        <a href="{{ url('admin/frequencia') }}">ADMINISTRAÇÃO</a>
                     </li>
+                @endif
             </ul>
             @endif
 
