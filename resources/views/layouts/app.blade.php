@@ -88,7 +88,7 @@
                 </li>
                 @if(Auth::user()->acesso == 'Admin')
                     <li>
-                        <a href="{{ url('admin/frequencia') }}">ADMINISTRAÇÃO</a>
+                        <a href="{{ url('admin') }}">ADMINISTRAÇÃO</a>
                     </li>
                 @endif
             </ul>
