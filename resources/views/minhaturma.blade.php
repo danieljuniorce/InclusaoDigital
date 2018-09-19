@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+{{ csrf_field() }}
 @section('content')
     <div class="container bg-light" id="minhaturma">
         <h3 class="text-center py-3"><i class="fas fa-book"></i> MINHA TURMA</h3>

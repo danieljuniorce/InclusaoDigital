@@ -1,6 +1,4 @@
-var app = new Vue({
-    el: #app,
-    data:{
-        message: 'Teste - Louco!'
-    }
-})
+function maiuscula(texto){
+    uppercase = texto.toUpperCase();
+    texto.value = uppercase;
+}

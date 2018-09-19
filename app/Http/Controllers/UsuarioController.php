@@ -7,6 +7,7 @@ use Auth;
 use Illuminate\Support\Facades\DB;
 use App;
 use App\User;
+use App\Frequencia;
 class UsuarioController extends Controller
 {
     public function __construct(){
@@ -23,8 +24,10 @@ class UsuarioController extends Controller
         return view('minhaturma', compact('turma', 'numero'));
     }
 
-    public function minhaFrequencia(){
-        return view('minhafrequencia');
+    public function minhaFrequencia(Request $request, $id){
+
+        $users = User::find($id)->join('frequencias', 'users.id', '=', 'frequencias.user_id')->get();
+        return view('minhafrequencia', compact('users'));
     }
     
     public function perfil(Request $request, $matricula){

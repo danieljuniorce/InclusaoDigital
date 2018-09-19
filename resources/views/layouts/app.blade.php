@@ -64,7 +64,7 @@
                         <a href="{{ route('minhaturma', Auth::user()->turma) }}">MINHA TURMA</a>
                         </li>
                         <li>
-                            <a href="{{ route('frequencia') }}">CONSULTA FREQUÊNCIA</a>
+                            <a href="{{ route('frequencia', Auth::user()->id) }}">CONSULTA FREQUÊNCIA</a>
                         </li>
                     </ul>
                 </li>
